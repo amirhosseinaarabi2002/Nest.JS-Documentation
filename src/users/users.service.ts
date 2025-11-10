@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common';
+import { CreateUserDto } from './dto/create-user.dto/create-user.dto';
+import { UpdateUserDto } from './dto/create-user.dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -49,7 +51,7 @@ export class UsersService {
     };
   }
 
-  createUser(data: object): object {
+  createUser(data: CreateUserDto): object {
     if (data) {
       this.users.push(data);
     }
@@ -61,7 +63,7 @@ export class UsersService {
     };
   }
 
-  updateUser(id: number, data: any) {
+  updateUser(id: number, data: UpdateUserDto) {
     let findUser: { id: number; name: string } | null = null;
 
     for (const user of this.users) {
@@ -72,7 +74,6 @@ export class UsersService {
       }
     }
     if (findUser) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
       findUser.name = data.name;
 
       return {
