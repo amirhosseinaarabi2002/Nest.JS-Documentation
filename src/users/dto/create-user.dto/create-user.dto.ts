@@ -5,11 +5,11 @@ import {
   MaxLength,
   Min,
   MinLength,
-} from 'class-validator';
+} from 'class-validator'; 
 
 export class CreateUserDto {
-  @IsInt()
-  @Max(100)
+  @IsInt() 
+  @Max(100) 
   @Min(1)
   id: number;
 
@@ -17,4 +17,6 @@ export class CreateUserDto {
   @MaxLength(15)
   @MinLength(3)
   name: string;
+
+  mobile?: string;
 }
