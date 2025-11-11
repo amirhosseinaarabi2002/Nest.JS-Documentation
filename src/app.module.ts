@@ -7,10 +7,10 @@ import { user } from './users/entities/user.entity';
   imports: [
     UsersModule,
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'postgres',
       host: 'localhost',
-      port: 3306,
-      username: 'root',
+      port: 5432,
+      username: 'postgres',
       password: '',
       database: 'users',
       entities: [user],
