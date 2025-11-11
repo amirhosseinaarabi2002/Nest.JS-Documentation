@@ -13,7 +13,7 @@ export class MobilePipe implements PipeTransform {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     const mobile: string = value.mobile;
 
-    if (mobile.length !== this.mobileLength) {
+    if (mobile.length != this.mobileLength) {
       throw new BadRequestException('validation failed!');
     }
 
